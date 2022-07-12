@@ -9,25 +9,31 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "AbilityCharacterEffectGraph",
+"base": "Control",
+"class": "BaseCard",
 "language": "GDScript",
-"path": "res://scenes/AbilityCharacterEffectGraph.gd"
+"path": "res://scenes/BaseCard.gd"
 }, {
-"base": "Area2D",
-"class": "Card",
+"base": "Node",
+"class": "CardBuilder",
 "language": "GDScript",
-"path": "res://scenes/Card.gd"
+"path": "res://scripts/CardBuilder.gd"
+}, {
+"base": "Node",
+"class": "CardFactory",
+"language": "GDScript",
+"path": "res://scripts/CardFactory.gd"
 } ]
 _global_script_class_icons={
-"AbilityCharacterEffectGraph": "",
-"Card": ""
+"BaseCard": "",
+"CardBuilder": "",
+"CardFactory": ""
 }
 
 [application]
 
 config/name="Cards"
-run/main_scene="res://scenes/Card.tscn"
+run/main_scene="res://scenes/BaseCard.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -41,6 +47,7 @@ window/stretch/aspect="keep"
 
 filter=false
 mipmap=false
+mouse=true
 
 [physics]
 

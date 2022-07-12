@@ -1,8 +1,76 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/Main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/CharacterCard.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/AbilityCard.tscn" type="PackedScene" id=3]
 
-[node name="Main" type="CanvasLayer"]
+[node name="Main" type="Node"]
 script = ExtResource( 1 )
 
-[node name="CardHolder" type="Node" parent="."]
+[node name="Interface" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 60.0
+margin_bottom = -444.0
+
+[node name="Enemies" type="HBoxContainer" parent="Interface"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CharacterCard" parent="Interface/Enemies" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 494.0
+margin_right = 638.0
+margin_bottom = 216.0
+
+[node name="CharacterCard2" parent="Interface/Enemies" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 642.0
+margin_right = 786.0
+margin_bottom = 216.0
+
+[node name="Cards" type="HBoxContainer" parent="Interface"]
+margin_left = 1.0
+margin_top = 345.0
+margin_right = 1280.0
+margin_bottom = 561.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="AbilityCard" parent="Interface/Cards" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 345.0
+margin_right = 489.0
+margin_bottom = 216.0
+
+[node name="AbilityCard2" parent="Interface/Cards" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 493.0
+margin_right = 637.0
+margin_bottom = 216.0
+
+[node name="AbilityCard3" parent="Interface/Cards" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 641.0
+margin_right = 785.0
+margin_bottom = 216.0
+
+[node name="AbilityCard4" parent="Interface/Cards" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 789.0
+margin_right = 933.0
+margin_bottom = 216.0
