@@ -25,15 +25,8 @@ alignment = 1
 [node name="CharacterCard" parent="Interface/Enemies" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 494.0
-margin_right = 638.0
-margin_bottom = 216.0
-
-[node name="CharacterCard2" parent="Interface/Enemies" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 642.0
-margin_right = 786.0
+margin_left = 568.0
+margin_right = 712.0
 margin_bottom = 216.0
 
 [node name="Cards" type="HBoxContainer" parent="Interface"]

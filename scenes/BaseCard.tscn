@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/card/card-front.png" type="Texture" id=1]
 [ext_resource path="res://scenes/BaseCard.gd" type="Script" id=2]
 [ext_resource path="res://assets/Andada-Bold.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/Basic-San-Serif.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/card/card-back.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72, 105.25 )
@@ -24,6 +25,11 @@ margin_bottom = -509.0
 rect_min_size = Vector2( 144, 211 )
 mouse_filter = 2
 script = ExtResource( 2 )
+
+[node name="Highlight" type="Sprite" parent="."]
+position = Vector2( 72, 106 )
+scale = Vector2( 0.492013, 0.484581 )
+texture = ExtResource( 5 )
 
 [node name="CardArea" type="Area2D" parent="."]
 
