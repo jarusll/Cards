@@ -2,6 +2,7 @@ extends BaseCard
 
 class_name CharacterCard
 
+signal enemy_turn_played
 signal enemy_down
 signal turn_played
 

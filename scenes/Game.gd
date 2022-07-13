@@ -3,7 +3,6 @@ extends Control
 class_name Game
 
 const Queue = preload("res://scripts/Queue.gd")
-const PlayerTurnState = preload("res://scripts/PlayerTurnState.gd")
 const AbilityCard = preload("res://scenes/AbilityCard.tscn")
 
 var turn_queue = Queue.new()

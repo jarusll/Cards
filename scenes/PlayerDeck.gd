@@ -2,6 +2,8 @@ extends Deck
 
 signal ability_selected
 
+const AbilityCardBuilder = preload("res://scripts/AbilityCardBuilder.gd")
+
 class_name PlayerDeck
 
 const AbilityCard = preload("res://scenes/AbilityCard.tscn")
@@ -14,8 +16,7 @@ func select_card(card):
 	emit_signal("ability_selected", card)
 
 func generate():
-	for i in 5:
-		add(AbilityCard.instance())
+	add(AbilityCardBuilder.new().build().with_title("FRAG/ment").with_subtitle("KAY/O").with_description("").get_card())
 
 func clear_turn():
 	.clear_selection()

@@ -2,11 +2,11 @@ extends Node
 
 class_name CardBuilder
 
-const BaseCard = preload('res://scenes/BaseCard.tscn')
+var template_card = preload("res://scenes/BaseCard.tscn")
 var card_instance
 
 func build():
-	card_instance = BaseCard.instance()
+	card_instance = template_card.instance()
 	return self
 
 func with_title(title):
