@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "BaseCard",
+"class": "AbilityCard",
+"language": "GDScript",
+"path": "res://scenes/AbilityCard.gd"
+}, {
 "base": "Control",
 "class": "BaseCard",
 "language": "GDScript",
@@ -23,11 +28,54 @@ _global_script_classes=[ {
 "class": "CardFactory",
 "language": "GDScript",
 "path": "res://scripts/CardFactory.gd"
+}, {
+"base": "BaseCard",
+"class": "CharacterCard",
+"language": "GDScript",
+"path": "res://scenes/CharacterCard.gd"
+}, {
+"base": "Control",
+"class": "Deck",
+"language": "GDScript",
+"path": "res://scenes/Deck.gd"
+}, {
+"base": "Control",
+"class": "Game",
+"language": "GDScript",
+"path": "res://scenes/Game.gd"
+}, {
+"base": "BaseCard",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scenes/PlayerCard.gd"
+}, {
+"base": "Deck",
+"class": "PlayerDeck",
+"language": "GDScript",
+"path": "res://scenes/PlayerDeck.gd"
+}, {
+"base": "Node",
+"class": "Queue",
+"language": "GDScript",
+"path": "res://scripts/Queue.gd"
+}, {
+"base": "Deck",
+"class": "enemydeck",
+"language": "GDScript",
+"path": "res://scenes/EnemyDeck.gd"
 } ]
 _global_script_class_icons={
+"AbilityCard": "",
 "BaseCard": "",
 "CardBuilder": "",
-"CardFactory": ""
+"CardFactory": "",
+"CharacterCard": "",
+"Deck": "",
+"Game": "",
+"Player": "",
+"PlayerDeck": "",
+"Queue": "",
+"enemydeck": ""
 }
 
 [application]

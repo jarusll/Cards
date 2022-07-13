@@ -1,6 +1,9 @@
 extends BaseCard
 
-signal ability_clicked(ability)
+signal turn_played
+signal player_turn_played
+
+class_name AbilityCard
 
 var damage_points = 30
 
@@ -20,19 +23,11 @@ func set_ability_description(description):
 	set_description(description)
 
 func set_damage_points(points):
-	damage_points = points
-	$Interface/DamagePoints.set_text(String(damage_points))
+	set_count(points)
 
-func use(CharacterCard):
-	CharacterCard.damage(damage_points)	
-	queue_free()
-
-func _on_Interface_gui_input(event: InputEvent):
-	if event is InputEventMouseButton and event.is_pressed():
-		emit_signal("ability_clicked", self)
-
-func highlight():
-	$Highlight.show()
-
-func unhighlight():
-	$Highlight.hide()
+func use(character_card):
+	character_card.take_damage(damage_points)	
+	# emit_signal("turn_played")
+	emit_signal("player_turn_played")
+	print_debug("player turn played")
+	# queue_free()
