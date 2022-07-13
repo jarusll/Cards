@@ -4,7 +4,6 @@ class_name CharacterCard
 
 signal enemy_down
 signal turn_played
-signal enemy_turn_played
 
 var HP = 100
 
@@ -29,10 +28,10 @@ func set_HP(newHP):
 
 func take_damage(n):
 	HP -= n
+	set_HP(HP)
 	if HP <= 0:
 		emit_signal("enemy_down", self)
 		queue_free()
-	set_HP(HP)
 
 func play(player):
 	attack(player, 1)

@@ -12,7 +12,6 @@ func _ready():
 		character.connect("ability_clicked", self, "on_ability_clicked")
 
 func on_character_clicked(character):
-	print_debug("char clicked")
 	selected_character = character
 	if selected_ability:
 		selected_ability.use(selected_character)
@@ -20,7 +19,6 @@ func on_character_clicked(character):
 	selected_character = null
 
 func on_ability_clicked(ability):
-	print_debug("ability clicked")
 	if selected_ability:
 		selected_ability.unhighlight()
 	selected_ability = ability

@@ -16,7 +16,11 @@ func add(card):
 	card.connect("clicked", self, "select_card")
 
 func cards():
-	return $Holder.get_children()
+	var children = []
+	for child in $Holder.get_children():
+		if is_instance_valid(child):
+			children.append(child)
+	return children
 
 func remove(card):
 	count -= 1
@@ -39,5 +43,4 @@ func get_selected():
 	return selected
 
 func clear_selection():
-	# print_debug("selection cleared")
 	selected = null

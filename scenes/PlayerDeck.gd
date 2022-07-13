@@ -12,7 +12,6 @@ func _ready():
 func select_card(card):
 	.select_card(card)
 	emit_signal("ability_selected", card)
-	# print_debug("ability_selected", card)
 
 func generate():
 	for i in 5:
@@ -20,3 +19,17 @@ func generate():
 
 func clear_turn():
 	.clear_selection()
+
+func play_turn():
+	pass
+
+func enable_turn():
+	generate()
+
+func disable_turn():
+	for card in cards():
+		card.can_grow = false
+		card.can_highlight = false
+		card.can_be_clicked = false
+	self.hide()
+	pass

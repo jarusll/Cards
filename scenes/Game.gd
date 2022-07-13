@@ -3,11 +3,15 @@ extends Control
 class_name Game
 
 const Queue = preload("res://scripts/Queue.gd")
+const PlayerTurnState = preload("res://scripts/PlayerTurnState.gd")
 const AbilityCard = preload("res://scenes/AbilityCard.tscn")
 
 var turn_queue = Queue.new()
 var selected_ability
 var selected_enemy
+var turn_state
+var player_turn_state 
+var enemies_turn_state
 
 func _ready():
 	enemy_deck().generate()
@@ -49,6 +53,9 @@ func all_deck_cards():
 func player():
 	return $GameContainer/HBoxContainer/PlayerCard
 
+func enemies():
+	return enemy_deck()
+
 func cards_with_turn():
 	var cards = []
 	cards.append(player())
@@ -56,9 +63,14 @@ func cards_with_turn():
 	return cards
 
 func next_turn():
+	var t = Timer.new()
+	t.set_wait_time(1)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
 	var card_with_turn = turn_queue.next()
-	print_debug("card with turn", card_with_turn)
-	print_debug("turn queue", turn_queue)
+	card_with_turn.highlight()
 	if card_with_turn == player():
 		player_deck().show()
 		player_deck().generate()
@@ -83,21 +95,16 @@ func clear_turn():
 	player_deck().clear_turn()
 
 func after_player_turn():
-	print("after player turn", player_cards())
-	print("after player turn", player_cards())
 	if player_cards().size() == 0:
-		print_debug("player cards 0")
 		next_turn()
 	pass
 
 func on_player_deck_empty():
-	print_debug("player deck empty")
+	player().disable_turn()
 	next_turn()
 
 func on_enemy_deck_empty():
-	print_debug("enemy deck empty")
 	get_tree().quit()
 
 func on_enemy_down(enemy):
-	print_debug("enemy downed")
 	enemy_deck().remove(enemy)

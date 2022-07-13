@@ -18,7 +18,7 @@ func next():
 	if is_instance_valid(queue[0]):
 		return queue[0]
 	queue.pop_front()
-	return next()
+	return queue[0]
 
 func items():
 	return queue

@@ -1,6 +1,5 @@
 extends BaseCard
 
-signal turn_played
 signal player_turn_played
 
 class_name AbilityCard
@@ -27,7 +26,4 @@ func set_damage_points(points):
 
 func use(character_card):
 	character_card.take_damage(damage_points)	
-	# emit_signal("turn_played")
 	emit_signal("player_turn_played")
-	print_debug("player turn played")
-	# queue_free()

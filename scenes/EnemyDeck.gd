@@ -10,7 +10,7 @@ func _ready():
 	pass # replace with function body.
 
 func generate():
-	for i in 2:
+	for i in 5:
 		add(CharacterCard.instance())
 
 func make_cards_interactive():
@@ -29,7 +29,6 @@ func select_card(card):
 	.select_card(card)
 	var selected_enemy = get_selected()
 	emit_signal("enemy_selected", selected_enemy)
-	print_debug("enemy_selected", selected_enemy)
 
 func clear_turn():
 	.clear_selection()
@@ -37,3 +36,12 @@ func clear_turn():
 		card.unhighlight()
 		card.reset_scale()
 	make_cards_uninteractive()
+
+func enable_turn():
+	print_debug("enemy playing turn")
+	generate()
+	for enemy_card in cards():
+		enemy_card.play()
+
+func disable_turn():
+	print_debug("enemy turn played")
