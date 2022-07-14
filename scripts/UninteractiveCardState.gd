@@ -8,7 +8,5 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	pass
 
-func _on_gui_input(event):
-	if event is InputEventMouseButton and event.is_pressed():
-		card_instance.transition_highlight()
+func _on_gui_input(_event):
 	pass

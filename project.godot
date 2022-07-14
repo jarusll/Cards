@@ -9,45 +9,35 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "BaseCard",
-"class": "AbilityCard",
-"language": "GDScript",
-"path": "res://scenes/AbilityCard.gd"
-}, {
-"base": "CardBuilder",
-"class": "AbilityCardBuilder",
-"language": "GDScript",
-"path": "res://scripts/AbilityCardBuilder.gd"
-}, {
 "base": "Node",
 "class": "AbstractCardState",
 "language": "GDScript",
 "path": "res://scripts/AbstractCardState.gd"
+}, {
+"base": "Node",
+"class": "AbstractCharacter",
+"language": "GDScript",
+"path": "res://scripts/AbstractCharacter.gd"
 }, {
 "base": "Area2D",
 "class": "BaseCard",
 "language": "GDScript",
 "path": "res://scenes/BaseCard.gd"
 }, {
-"base": "Node",
-"class": "CardBuilder",
+"base": "AbstractCharacter",
+"class": "Character",
 "language": "GDScript",
-"path": "res://scripts/CardBuilder.gd"
-}, {
-"base": "Node",
-"class": "CardFactory",
-"language": "GDScript",
-"path": "res://scripts/CardFactory.gd"
-}, {
-"base": "BaseCard",
-"class": "CharacterCard",
-"language": "GDScript",
-"path": "res://scenes/CharacterCard.gd"
+"path": "res://scripts/Character.gd"
 }, {
 "base": "Control",
 "class": "Deck",
 "language": "GDScript",
 "path": "res://scenes/Deck.gd"
+}, {
+"base": "AbstractCardState",
+"class": "DraggingCardState",
+"language": "GDScript",
+"path": "res://scripts/DraggingCardState.gd"
 }, {
 "base": "Control",
 "class": "Game",
@@ -64,16 +54,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/InteractiveCardState.gd"
 }, {
-"base": "BaseCard",
-"class": "Player",
-"language": "GDScript",
-"path": "res://scenes/PlayerCard.gd"
-}, {
-"base": "Deck",
-"class": "PlayerDeck",
-"language": "GDScript",
-"path": "res://scenes/PlayerDeck.gd"
-}, {
 "base": "Node",
 "class": "Queue",
 "language": "GDScript",
@@ -83,29 +63,19 @@ _global_script_classes=[ {
 "class": "UninteractiveCardState",
 "language": "GDScript",
 "path": "res://scripts/UninteractiveCardState.gd"
-}, {
-"base": "Deck",
-"class": "enemydeck",
-"language": "GDScript",
-"path": "res://scenes/EnemyDeck.gd"
 } ]
 _global_script_class_icons={
-"AbilityCard": "",
-"AbilityCardBuilder": "",
 "AbstractCardState": "",
+"AbstractCharacter": "",
 "BaseCard": "",
-"CardBuilder": "",
-"CardFactory": "",
-"CharacterCard": "",
+"Character": "",
 "Deck": "",
+"DraggingCardState": "",
 "Game": "",
 "HighlightedCardState": "",
 "InteractiveCardState": "",
-"Player": "",
-"PlayerDeck": "",
 "Queue": "",
-"UninteractiveCardState": "",
-"enemydeck": ""
+"UninteractiveCardState": ""
 }
 
 [application]
@@ -132,6 +102,11 @@ mouse=true
 left_click={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+right_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 

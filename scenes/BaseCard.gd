@@ -6,10 +6,9 @@ var count_text
 var state
 
 func _ready():
-	state = UninteractiveCardState.new().set_card(self)
 	position = get_viewport().get_visible_rect().size / 2
-	$UI/Count.set_text(String(20))
-	transition_uninteractive()
+	set_count(0)
+	transition_interactive()
 
 func set_state(new_state):
 	state = new_state
@@ -38,3 +37,10 @@ func transition_interactive():
 func transition_highlight():
 	state = HighlightedCardState.new().set_card(self)
 	$Highlight.show()
+
+func transition_dragging():
+	state = DraggingCardState.new().set_card(self)
+	$Highlight.show()
+
+func sprite_size():
+	return ($Sprite.get_rect().size * $Sprite.scale) / 2

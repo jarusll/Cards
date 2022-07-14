@@ -1,0 +1,3 @@
+extends AbstractCharacter
+
+class_name Character
