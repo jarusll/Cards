@@ -6,7 +6,7 @@ var count_text
 var state
 
 func _ready():
-	position = get_viewport().get_visible_rect().size / 2
+	# position = get_viewport().get_visible_rect().size / 2
 	set_count(0)
 	transition_interactive()
 
@@ -44,3 +44,6 @@ func transition_dragging():
 
 func sprite_size():
 	return ($Sprite.get_rect().size * $Sprite.scale) / 2
+
+func drag(delta_position):
+	position += delta_position

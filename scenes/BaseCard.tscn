@@ -46,12 +46,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -5.0
+margin_left = -36.0
 margin_top = 27.0
-margin_right = 5.0
+margin_right = 36.0
 margin_bottom = 33.0
 custom_fonts/font = SubResource( 2 )
-text = "13"
 align = 1
 valign = 1
 
