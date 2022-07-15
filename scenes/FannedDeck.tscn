@@ -8,11 +8,3 @@
 script = ExtResource( 2 )
 
 [node name="AbilityCard" parent="." index="0" instance=ExtResource( 3 )]
-
-[node name="AbilityCard2" parent="." index="1" instance=ExtResource( 3 )]
-
-[node name="AbilityCard3" parent="." index="2" instance=ExtResource( 3 )]
-
-[node name="AbilityCard4" parent="." index="3" instance=ExtResource( 3 )]
-
-[node name="AbilityCard5" parent="." index="4" instance=ExtResource( 3 )]

@@ -12,9 +12,7 @@ func _on_gui_input(event):
 	if event.is_action_released("left_click"):
 		card_instance.transition_interactive()
 	if event is InputEventMouseMotion:
-		card_instance.drag(event.position - card_instance.sprite_size())
-		# card_instance.position += event.position
-		# card_instance.position -= card_instance.sprite_size()
+		card_instance.drag_line(event.position)
 
 func _on_AbilityCard_area_entered(area: Area2D):
 	if area.get_class() == "EnemyCard":

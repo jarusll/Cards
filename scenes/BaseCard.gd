@@ -41,10 +41,12 @@ func transition_interactive():
 	$Highlight.hide()
 
 func transition_highlight():
+	print_debug("hightlighted")
 	state = HighlightedCardState.new().set_card(self)
 	$Highlight.show()
 
 func transition_dragging():
+	print_debug("dragging")
 	state = DraggingCardState.new().set_card(self)
 	$Highlight.show()
 
@@ -57,5 +59,5 @@ func get_width():
 func get_dimension():
 	return $Sprite.get_rect().size
 
-func drag(delta_position):
-	position += delta_position
+# func drag(delta_position):
+# 	position += delta_position
