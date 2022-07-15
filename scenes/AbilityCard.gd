@@ -1,6 +1,6 @@
 extends BaseCard
 
-var damage_points = 10
+var damage_points = 100
 var original_position = get_position()
 var focused_enemy
 
@@ -39,10 +39,12 @@ func dismiss_focused_enemy():
 	focused_enemy = null
 
 func hover_released():
+	attack(focused_enemy)
 	transition_interactive()
 
 func attack(enemy):
 	enemy.take_damage(damage_points)
+	queue_free()
 
 func set_damage_points(dp):
 	damage_points = dp

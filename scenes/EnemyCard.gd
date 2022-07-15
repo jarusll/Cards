@@ -7,3 +7,9 @@ func _ready():
 
 func get_class():
 	return "EnemyCard"
+
+func take_damage(dp):
+	.take_damage(dp)
+	if HP <= 0:
+		print_debug("enemy killed")
+		queue_free()
