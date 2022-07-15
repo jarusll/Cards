@@ -10,6 +10,12 @@ func _ready():
 	set_count(0)
 	transition_interactive()
 
+func get_position():
+	return position
+
+func set_position(new_position):
+	position = new_position
+
 func set_state(new_state):
 	state = new_state
 
@@ -44,6 +50,12 @@ func transition_dragging():
 
 func sprite_size():
 	return ($Sprite.get_rect().size * $Sprite.scale) / 2
+
+func get_width():
+	return $Sprite.get_rect().size.x * $Sprite.scale.x
+
+func get_dimension():
+	return $Sprite.get_rect().size
 
 func drag(delta_position):
 	position += delta_position

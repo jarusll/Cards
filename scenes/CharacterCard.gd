@@ -7,16 +7,13 @@ var HP = 100
 func _ready():
 	transition_uninteractive()
 	set_hp(HP)
-	pass # Replace with function body.
 
 func about_to_be_attacked():
+	# pass
 	transition_highlight()
 
 func crisis_averted():
 	transition_uninteractive()
-
-func transition_dragging():
-	pass
 
 func set_hp(new_hp):
 	HP = new_hp

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Deck.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/FannedDeck.gd" type="Script" id=2]
+[ext_resource path="res://scenes/AbilityCard.tscn" type="PackedScene" id=3]
+
+[node name="FannedDeck" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="AbilityCard" parent="." index="0" instance=ExtResource( 3 )]
+
+[node name="AbilityCard2" parent="." index="1" instance=ExtResource( 3 )]
+
+[node name="AbilityCard3" parent="." index="2" instance=ExtResource( 3 )]
+
+[node name="AbilityCard4" parent="." index="3" instance=ExtResource( 3 )]
+
+[node name="AbilityCard5" parent="." index="4" instance=ExtResource( 3 )]

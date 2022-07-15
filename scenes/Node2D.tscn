@@ -1,39 +1,28 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/AbilityCard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/FannedDeck.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/EnemyCard.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/TestDrag.gd" type="Script" id=3]
-[ext_resource path="res://scenes/CharacterCard.tscn" type="PackedScene" id=5]
 
-[node name="TestDrag" type="Node2D"]
+[node name="TestDrag" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -180.0
+margin_right = 320.0
+margin_bottom = 180.0
 script = ExtResource( 3 )
 
-[node name="AbilityCard" parent="." instance=ExtResource( 1 )]
-position = Vector2( 120, 182 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = 54.0
-margin_top = 221.0
-margin_right = 182.0
-margin_bottom = 268.0
-text = "ability"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="Label2" type="Label" parent="."]
-margin_left = 221.0
-margin_top = 152.0
-margin_right = 375.0
-margin_bottom = 211.0
-rect_pivot_offset = Vector2( 55, 30 )
-text = "Character"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="CharacterCard" parent="." instance=ExtResource( 5 )]
-position = Vector2( 306, 111 )
+[node name="FannedDeck" parent="." instance=ExtResource( 1 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [node name="EnemyCard" parent="." instance=ExtResource( 2 )]
-position = Vector2( 463, 225 )
+position = Vector2( 227, 76 )
+
+[node name="EnemyCard2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 328, 77 )

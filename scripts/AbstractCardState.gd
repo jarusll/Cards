@@ -12,10 +12,16 @@ func get_card():
     return card_instance
 
 func _on_mouse_entered():
-    assert(false)
+    pass
 
 func _on_mouse_exited():
-    assert(false)
+    pass
 
 func _on_gui_input(_event):
-    assert(false)
+    pass
+
+func _on_AbilityCard_area_entered(area:Area2D):
+	pass
+
+func _on_AbilityCard_area_exited(area:Area2D):
+	pass
