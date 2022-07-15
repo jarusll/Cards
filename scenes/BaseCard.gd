@@ -37,6 +37,7 @@ func transition_uninteractive():
 	$Highlight.hide()
 
 func transition_interactive():
+	print_debug("interactive")
 	state = InteractiveCardState.new().set_card(self)
 	$Highlight.hide()
 
@@ -51,13 +52,10 @@ func transition_dragging():
 	$Highlight.show()
 
 func sprite_size():
-	return ($Sprite.get_rect().size * $Sprite.scale) / 2
+	return ($Sprite.get_rect().size * $Sprite.scale)
 
 func get_width():
 	return $Sprite.get_rect().size.x * $Sprite.scale.x
 
 func get_dimension():
 	return $Sprite.get_rect().size
-
-# func drag(delta_position):
-# 	position += delta_position

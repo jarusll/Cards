@@ -20,8 +20,8 @@ func _on_mouse_exited():
 func _on_gui_input(_event):
     pass
 
-func _on_AbilityCard_area_entered(area:Area2D):
-	pass
+func _on_area_entered(_area:Area2D):
+	pass 
 
-func _on_AbilityCard_area_exited(area:Area2D):
-	pass
+func _on_area_exited(_area:Area2D):
+    pass
