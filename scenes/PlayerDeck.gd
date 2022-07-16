@@ -31,30 +31,15 @@ func remove(card):
 		emit_signal("player_turn_played")
 
 func generate():
-	print_debug("player generate")
+	# print_debug("player generate")
 	Abilities.shuffle()
 	for child in get_children():
 		child.queue_free()
 		# remove(child)
 		count = 0
-	for card in Abilities.slice(0, 5, 1):
+	for card in Abilities.slice(0, 4, 1):
 		add(card.instance())
+	print_debug(get_child_count(), get_children())
 	update()
-
-# func _draw():
-# 	print_debug("player card played and redrawn")
-# 	var child_count = get_child_count()
-# 	if child_count > 0:
-# 		# cards are centered so left half of left most & right half of right most child will 
-# 		# be counted in total width
-# 		# left half + right half of a child = 1 child_width
-# 		# thus subtracting 1 child_width
-# 		var child_width = get_child(0).get_width()
-# 		var total_width = (child_count * child_width) - child_width
-# 		var half_width = total_width / 2
-
-# 		var center = Vector2.ZERO
-# 		var left_most_position = center - Vector2(half_width, 0)
-# 		for child in get_children():
-# 			child.set_position(left_most_position)
-# 			left_most_position += Vector2(child_width, 0)
+	# for child in get_children():
+	# 	print_debug(child.get_class())

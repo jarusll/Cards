@@ -16,6 +16,7 @@ func _ready():
 	pass # Replace with function body.
 
 func game_over():
+	print_debug("game over")
 	get_tree().quit()
 
 func enemy_deck():

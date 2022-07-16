@@ -30,7 +30,7 @@ func generate():
 		card.queue_free()
 		count = 0
 	Enemies.shuffle()
-	for enemy in Enemies:
+	for enemy in Enemies.slice(0, 2):
 		add(enemy.instance())
 	update()
 

@@ -2,6 +2,8 @@ extends BaseCard
 
 signal player_card_played
 
+class_name AbilityCard
+
 var damage_points = 100
 var original_position = get_position()
 var focused_enemy
@@ -27,6 +29,9 @@ func transition_interactive():
 func transition_hovering():
 	state = HoveringCardState.new().set_card(self)
 
+func transition_dragging():
+	.transition_dragging()
+
 func _on_area_entered(area:Area2D):
 	state._on_area_entered(area)
 
@@ -48,7 +53,7 @@ func hover_released():
 
 func attack(enemy):
 	enemy.take_damage(damage_points)
-	queue_free()
+	# queue_free()
 	emit_signal("player_card_played", self)
 
 func set_damage_points(dp):
