@@ -25,5 +25,3 @@ func cards():
 func remove(card):
 	count -= 1
 	card.queue_free()
-	if count == 0:
-		emit_signal("deck_empty")

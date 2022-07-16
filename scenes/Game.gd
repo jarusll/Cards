@@ -10,6 +10,8 @@ func _ready():
 	$PlayerDeck.generate()
 	$EnemyDeck.generate()
 	add_turns()
+	turn_queue.make_last_first()
+	next_turn()
 	pass # Replace with function body.
 
 func add_turns():
@@ -30,3 +32,8 @@ func player_deck():
 
 func player():
 	return $PlayerCard
+
+func next_turn():
+	var turn_card = turn_queue.next()
+	if turn_card.get_class() == "PlayerCard":
+		player_deck().generate()

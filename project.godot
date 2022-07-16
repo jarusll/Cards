@@ -79,6 +79,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/InteractiveCardState.gd"
 }, {
+"base": "CharacterCard",
+"class": "PlayerCard",
+"language": "GDScript",
+"path": "res://scenes/PlayerCard.gd"
+}, {
 "base": "FannedDeck",
 "class": "PlayerDeck",
 "language": "GDScript",
@@ -109,6 +114,7 @@ _global_script_class_icons={
 "HighlightedCardState": "",
 "HoveringCardState": "",
 "InteractiveCardState": "",
+"PlayerCard": "",
 "PlayerDeck": "",
 "Queue": "",
 "UninteractiveCardState": ""
