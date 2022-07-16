@@ -1,11 +1,18 @@
-extends Deck
+extends FannedDeck
 
-class_name FannedDeck
+class_name PlayerDeck
 
 func _ready():
+	for card in cards():
+		card.connect("player_card_played", self, "_draw")
 	pass # Replace with function body.
 
+func add(card):
+	var added = .add(card)
+	added.connect("player_card_played", self, "update")
+
 func _draw():
+	print_debug("player card played and redrawn")
 	var child_count = get_child_count()
 	if child_count > 0:
 		# cards are centered so left half of left most & right half of right most child will 

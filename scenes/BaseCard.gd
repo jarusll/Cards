@@ -6,7 +6,7 @@ var count_text
 var state
 
 func _ready():
-	# position = get_viewport().get_visible_rect().size / 2
+	position = get_viewport().get_visible_rect().size / 2
 	set_count(0)
 	transition_interactive()
 
@@ -37,17 +37,14 @@ func transition_uninteractive():
 	$Highlight.hide()
 
 func transition_interactive():
-	print_debug("interactive")
 	state = InteractiveCardState.new().set_card(self)
 	$Highlight.hide()
 
 func transition_highlight():
-	print_debug("hightlighted")
 	state = HighlightedCardState.new().set_card(self)
 	$Highlight.show()
 
 func transition_dragging():
-	print_debug("dragging")
 	state = DraggingCardState.new().set_card(self)
 	$Highlight.show()
 

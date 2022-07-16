@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/card-front.png-0288c87d61b699781caa8fe5b4c85dbf.stex"
+path="res://.import/magical.png-e850e1e56eba0174bbc3ca4dca541d11.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/card/card-front.png"
-dest_files=[ "res://.import/card-front.png-0288c87d61b699781caa8fe5b4c85dbf.stex" ]
+source_file="res://assets/card/magical.png"
+dest_files=[ "res://.import/magical.png-e850e1e56eba0174bbc3ca4dca541d11.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

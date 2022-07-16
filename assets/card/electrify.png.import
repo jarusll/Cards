@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icefreeze.png-b06e1aed339644e32822a3c5da9a50cf.stex"
+path="res://.import/electrify.png-6358f0f2479cc59495299d20ec19572a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/card/icefreeze.png"
-dest_files=[ "res://.import/icefreeze.png-b06e1aed339644e32822a3c5da9a50cf.stex" ]
+source_file="res://assets/card/electrify.png"
+dest_files=[ "res://.import/electrify.png-6358f0f2479cc59495299d20ec19572a.stex" ]
 
 [params]
 

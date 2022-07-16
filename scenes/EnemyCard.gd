@@ -11,5 +11,4 @@ func get_class():
 func take_damage(dp):
 	.take_damage(dp)
 	if HP <= 0:
-		print_debug("enemy killed")
 		queue_free()

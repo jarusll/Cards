@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 signal deck_empty
 
@@ -13,7 +13,7 @@ func _ready():
 func add(card):
 	self.add_child(card)
 	count += 1
-	card.connect("clicked", self, "select_card")
+	return card
 
 func cards():
 	var children = []

@@ -1,5 +1,7 @@
 extends BaseCard
 
+signal player_card_played
+
 var damage_points = 100
 var original_position = get_position()
 var focused_enemy
@@ -19,7 +21,6 @@ func transition_interactive():
 	dismiss_focused_enemy()
 
 func transition_hovering():
-	print_debug("hovering")
 	state = HoveringCardState.new().set_card(self)
 
 func _on_area_entered(area:Area2D):
@@ -34,7 +35,6 @@ func prepare_to_attack(enemy):
 
 func dismiss_focused_enemy():
 	if focused_enemy != null:
-		print_debug("dismissing", focused_enemy)
 		focused_enemy.crisis_averted()
 	focused_enemy = null
 
@@ -45,6 +45,7 @@ func hover_released():
 func attack(enemy):
 	enemy.take_damage(damage_points)
 	queue_free()
+	emit_signal("player_card_played")
 
 func set_damage_points(dp):
 	damage_points = dp
