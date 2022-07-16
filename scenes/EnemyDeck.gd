@@ -17,7 +17,7 @@ func _ready():
 
 func add(card):
 	var added = .add(card)
-	added.connect("enemy_card_played", self, "remove")
+	added.connect("enemy_cleared", self, "remove")
 
 func remove(card):
 	.remove(card)
@@ -32,6 +32,7 @@ func generate():
 	Enemies.shuffle()
 	for enemy in Enemies:
 		add(enemy.instance())
+	update()
 
 func play(player):
 	for enemy in cards():

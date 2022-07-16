@@ -21,8 +21,8 @@ func get_class():
 func take_damage(dp):
 	.take_damage(dp)
 	if HP <= 0:
-		queue_free()
-		emit_signal("enemy_cleared")
+		# queue_free()
+		emit_signal("enemy_cleared", self)
 
 func attack(player):
 	var rng = RandomNumberGenerator.new()

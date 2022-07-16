@@ -39,6 +39,7 @@ func generate():
 		count = 0
 	for card in Abilities.slice(0, 5, 1):
 		add(card.instance())
+	update()
 
 # func _draw():
 # 	print_debug("player card played and redrawn")

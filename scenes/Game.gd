@@ -11,8 +11,12 @@ func _ready():
 	enemy_deck().connect("enemies_turn_played", self, "next_turn")
 	enemy_deck().connect("enemies_cleared", self, "next_dungeon")
 	player_deck().connect("player_turn_played", self, "next_turn")
+	player().connect("player_died", self, "game_over")
 	next_turn()
 	pass # Replace with function body.
+
+func game_over():
+	get_tree().quit()
 
 func enemy_deck():
 	return $EnemyDeck
