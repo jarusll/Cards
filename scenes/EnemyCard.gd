@@ -1,6 +1,7 @@
 extends CharacterCard
 
 signal enemy_cleared
+signal enemy_card_played
 
 class_name EnemyCard
 
@@ -22,3 +23,11 @@ func take_damage(dp):
 	if HP <= 0:
 		queue_free()
 		emit_signal("enemy_cleared")
+
+func attack(player):
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var low = 5
+	var high = 10
+	player.take_damage(rng.randi_range(low, high))
+	emit_signal("enemy_card_played", self)

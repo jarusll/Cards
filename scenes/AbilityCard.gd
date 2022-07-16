@@ -49,7 +49,7 @@ func hover_released():
 func attack(enemy):
 	enemy.take_damage(damage_points)
 	queue_free()
-	emit_signal("player_card_played")
+	emit_signal("player_card_played", self)
 
 func set_damage_points(dp):
 	damage_points = dp

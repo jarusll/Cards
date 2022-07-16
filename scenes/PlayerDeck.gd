@@ -1,5 +1,7 @@
 extends FannedDeck
 
+signal player_turn_played
+
 const Electrify = preload("res://scenes/ElectrifyAbility.tscn")
 const EarthShake = preload("res://scenes/EarthShakeAbility.tscn")
 const Fireball = preload("res://scenes/FireballAbility.tscn")
@@ -21,12 +23,20 @@ func _ready():
 
 func add(card):
 	var added = .add(card)
-	added.connect("player_card_played", self, "update")
+	added.connect("player_card_played", self, "remove")
+
+func remove(card):
+	.remove(card)
+	if count <= 0:
+		emit_signal("player_turn_played")
 
 func generate():
+	print_debug("player generate")
 	Abilities.shuffle()
 	for child in get_children():
 		child.queue_free()
+		# remove(child)
+		count = 0
 	for card in Abilities.slice(0, 5, 1):
 		add(card.instance())
 

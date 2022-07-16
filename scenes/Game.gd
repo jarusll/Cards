@@ -4,25 +4,15 @@ const Queue = preload("res://scripts/Queue.gd")
 
 class_name Game
 
-var turn_queue = Queue.new()
+var current_turn = "enemies"
 
 func _ready():
-	$PlayerDeck.generate()
-	$EnemyDeck.generate()
-	add_turns()
-	turn_queue.make_last_first()
+	enemy_deck().generate()
+	enemy_deck().connect("enemies_turn_played", self, "next_turn")
+	enemy_deck().connect("enemies_cleared", self, "next_dungeon")
+	player_deck().connect("player_turn_played", self, "next_turn")
 	next_turn()
 	pass # Replace with function body.
-
-func add_turns():
-	for card in all_playable_cards():
-		turn_queue.add(card)
-
-func all_playable_cards():
-	var playable_cards = []
-	playable_cards.append_array(enemy_deck().cards())
-	playable_cards.append(player())
-	return playable_cards
 
 func enemy_deck():
 	return $EnemyDeck
@@ -34,6 +24,20 @@ func player():
 	return $PlayerCard
 
 func next_turn():
-	var turn_card = turn_queue.next()
-	if turn_card.get_class() == "PlayerCard":
+	if current_turn == "enemies":
+		toggle_turn()
 		player_deck().generate()
+	else:
+		toggle_turn()
+		enemy_deck().play(player())
+
+func next_dungeon():
+	enemy_deck().generate()
+	current_turn = "enemies"
+	next_turn()
+
+func toggle_turn():
+	if current_turn == "player":
+		current_turn = "enemies"
+	else:
+		current_turn = "player"

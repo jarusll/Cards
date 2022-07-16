@@ -1,5 +1,8 @@
 extends FannedDeck
 
+signal enemies_turn_played
+signal enemies_cleared
+
 class_name EnemyDeck
 
 const Robot = preload("res://scenes/RobotEnemy.tscn")
@@ -14,11 +17,23 @@ func _ready():
 
 func add(card):
 	var added = .add(card)
-	added.connect("player_card_played", self, "update")
+	added.connect("enemy_card_played", self, "remove")
+
+func remove(card):
+	.remove(card)
+	if count <= 0:
+		print_debug("enemies cleared")
+		emit_signal("enemies_cleared")
 
 func generate():
 	for card in get_children():
 		card.queue_free()
+		count = 0
 	Enemies.shuffle()
 	for enemy in Enemies:
 		add(enemy.instance())
+
+func play(player):
+	for enemy in cards():
+		enemy.attack(player)
+	emit_signal("enemies_turn_played")
