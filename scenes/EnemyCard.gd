@@ -1,5 +1,7 @@
 extends CharacterCard
 
+signal enemy_cleared
+
 class_name EnemyCard
 
 func _ready():
@@ -19,3 +21,4 @@ func take_damage(dp):
 	.take_damage(dp)
 	if HP <= 0:
 		queue_free()
+		emit_signal("enemy_cleared")

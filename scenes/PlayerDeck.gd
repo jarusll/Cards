@@ -1,15 +1,34 @@
 extends FannedDeck
 
+const Electrify = preload("res://scenes/ElectrifyAbility.tscn")
+const EarthShake = preload("res://scenes/EarthShakeAbility.tscn")
+const Fireball = preload("res://scenes/FireballAbility.tscn")
+const Icefreeze = preload("res://scenes/IcefreezeAbility.tscn")
+const Magical = preload("res://scenes/MagicalAbility.tscn")
+const Physical = preload("res://scenes/PhysicalAbility.tscn")
+const Magnetic = preload("res://scenes/MagneticAbility.tscn")
+const Storm = preload("res://scenes/StormAbility.tscn")
+const Watergush = preload("res://scenes/WatergushAbility.tscn")
+
+const Abilities = [Electrify, EarthShake, Fireball, Icefreeze, Magical, Physical, Magnetic, Storm, Watergush]
+
 class_name PlayerDeck
 
 func _ready():
-	for card in cards():
-		card.connect("player_card_played", self, "_draw")
+	# for card in cards():
+	# 	card.connect("player_card_played", self, "_draw")
 	pass # Replace with function body.
 
 func add(card):
 	var added = .add(card)
 	added.connect("player_card_played", self, "update")
+
+func generate():
+	Abilities.shuffle()
+	for child in get_children():
+		child.queue_free()
+	for card in Abilities.slice(0, 5, 1):
+		add(card.instance())
 
 # func _draw():
 # 	print_debug("player card played and redrawn")

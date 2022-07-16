@@ -49,7 +49,7 @@ position = Vector2( 357, 275 )
 position = Vector2( 277, 274 )
 
 [node name="AbilityCard7" parent="." instance=ExtResource( 7 )]
-position = Vector2( 197, 271 )
+position = Vector2( 199, 275 )
 
 [node name="AbilityCard8" parent="." instance=ExtResource( 10 )]
 position = Vector2( 122, 269 )

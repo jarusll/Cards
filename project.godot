@@ -49,12 +49,17 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/EnemyCard.gd"
 }, {
+"base": "FannedDeck",
+"class": "EnemyDeck",
+"language": "GDScript",
+"path": "res://scenes/EnemyDeck.gd"
+}, {
 "base": "Deck",
 "class": "FannedDeck",
 "language": "GDScript",
 "path": "res://scenes/FannedDeck.gd"
 }, {
-"base": "Control",
+"base": "Node2D",
 "class": "Game",
 "language": "GDScript",
 "path": "res://scenes/Game.gd"
@@ -98,6 +103,7 @@ _global_script_class_icons={
 "Deck": "",
 "DraggingCardState": "",
 "EnemyCard": "",
+"EnemyDeck": "",
 "FannedDeck": "",
 "Game": "",
 "HighlightedCardState": "",
