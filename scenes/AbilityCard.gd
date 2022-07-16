@@ -7,7 +7,11 @@ var original_position = get_position()
 var focused_enemy
 
 func _ready():
-	set_damage_points(damage_points)
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var low = 5
+	var high = 10
+	set_damage_points(rng.randi_range(low, high))
 	$DragLine.hide()
 	pass
 

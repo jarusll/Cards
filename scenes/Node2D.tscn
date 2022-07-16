@@ -1,20 +1,58 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://scenes/PlayerDeck.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/EnemyCard.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/WindEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/TestDrag.gd" type="Script" id=3]
+[ext_resource path="res://scenes/RobotEnemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/WaterEnemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/IcefreezeAbility.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/PhysicalAbility.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/ElectrifyAbility.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/MagneticAbility.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/StormAbility.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/EarthShakeAbility.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/FireballAbility.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/MagicalAbility.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/WatergushAbility.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/WoodEnemy.tscn" type="PackedScene" id=15]
 
 [node name="TestDrag" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="EnemyCard" parent="." instance=ExtResource( 2 )]
-position = Vector2( 320, 50 )
+[node name="EnemyCard" parent="." instance=ExtResource( 4 )]
+position = Vector2( 570, 102 )
 
-[node name="EnemyCard2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 503, 49 )
+[node name="EnemyCard2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 477, 102 )
 
 [node name="EnemyCard3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 411, 49 )
+position = Vector2( 380, 106 )
 
-[node name="PlayerDeck" parent="." instance=ExtResource( 1 )]
-position = Vector2( 313, 223 )
+[node name="EnemyCard4" parent="." instance=ExtResource( 15 )]
+position = Vector2( 282, 109 )
+
+[node name="AbilityCard" parent="." instance=ExtResource( 11 )]
+position = Vector2( 118, 163 )
+
+[node name="AbilityCard2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 523, 266 )
+
+[node name="AbilityCard3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 602, 257 )
+
+[node name="AbilityCard4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 445, 278 )
+
+[node name="AbilityCard5" parent="." instance=ExtResource( 13 )]
+position = Vector2( 357, 275 )
+
+[node name="AbilityCard6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 277, 274 )
+
+[node name="AbilityCard7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 197, 271 )
+
+[node name="AbilityCard8" parent="." instance=ExtResource( 10 )]
+position = Vector2( 122, 269 )
+
+[node name="AbilityCard9" parent="." instance=ExtResource( 14 )]
+position = Vector2( 40, 270 )

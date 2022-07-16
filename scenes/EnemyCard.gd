@@ -3,6 +3,13 @@ extends CharacterCard
 class_name EnemyCard
 
 func _ready():
+	randomize()
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var low = 10
+	var high = 30
+	set_hp(rng.randi_range(low, high))
+	transition_uninteractive()
 	pass # Replace with function body.
 
 func get_class():

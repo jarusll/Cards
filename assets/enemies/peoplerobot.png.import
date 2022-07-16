@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icefreeze.png-b06e1aed339644e32822a3c5da9a50cf.stex"
+path="res://.import/peoplerobot.png-5a37a3c4782026ad054f17578f23fb72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/card/icefreeze.png"
-dest_files=[ "res://.import/icefreeze.png-b06e1aed339644e32822a3c5da9a50cf.stex" ]
+source_file="res://assets/enemies/peoplerobot.png"
+dest_files=[ "res://.import/peoplerobot.png-5a37a3c4782026ad054f17578f23fb72.stex" ]
 
 [params]
 
