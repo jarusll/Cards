@@ -34,10 +34,15 @@ func generate():
 	# print_debug("player generate")
 	Abilities.shuffle()
 	for child in get_children():
+		print(child)
 		child.queue_free()
-		# remove(child)
-		count = 0
-	for card in Abilities.slice(0, 4, 1):
+	count = 0
+	# 	# remove(child)
+	# 	count = 0
+	# var already_present = self.get_child_count()
+	print_debug(get_child_count())
+	print_debug(get_children())
+	for card in Abilities.slice(0, 4 - get_child_count(), 1):
 		add(card.instance())
 	print_debug(get_child_count(), get_children())
 	update()

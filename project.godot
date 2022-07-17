@@ -129,7 +129,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Cards"
-run/main_scene="res://scenes/BaseCard.tscn"
+run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
 
 [display]

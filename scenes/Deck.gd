@@ -25,3 +25,4 @@ func cards():
 func remove(card):
 	count -= 1
 	card.queue_free()
+	remove_child(card)
